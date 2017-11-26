@@ -1,4 +1,4 @@
-FROM centos:7.3.1611
+FROM centos:7.4.1708
 
 MAINTAINER tak-solder
 
@@ -7,8 +7,9 @@ RUN yum update -y \
     && yum install -y http://rpms.famillecollet.com/enterprise/remi-release-7.rpm \
     && yum clean all
 
-RUN yum install -y git zip unzip \
+RUN yum install -y git zip unzip vim \
     && yum clean all
+
 RUN yum install -y --enablerepo=remi,remi-php70 php-common php-cli php-json php-mbstring php-mysqlnd php-pdo php-xml \
     && yum clean all
 
