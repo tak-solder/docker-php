@@ -1,4 +1,4 @@
-FROM centos:7.4.1708
+FROM centos:7.6.1810
 
 MAINTAINER tak-solder
 
@@ -10,7 +10,7 @@ RUN yum update -y \
 RUN yum install -y git zip unzip vim \
     && yum clean all
 
-RUN yum install -y --enablerepo=remi,remi-php71 php-common php-cli php-json php-mbstring php-mysqlnd php-pdo php-xml \
+RUN yum install -y --enablerepo=remi,remi-php72 php-common php-cli php-json php-mbstring php-mysqlnd php-pdo php-xml \
     && yum clean all
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
